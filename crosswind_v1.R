@@ -76,6 +76,10 @@ meas_flux_planes <- real_flux_planes + rnorm (num_planes * length (real_flux_pla
                                               mean = 0, sd = 0.5)
 meas_flux_planes[meas_flux_planes < 0] <- 0.0
 
+# plot a synthetic crossflux survey
+plot (meas_flux_planes[2, ], col = 'blue', xlab = 'crosswind distance', ylab = 'concentrations')
+lines (real_flux_planes[2, ], col = 'red')
+
 #############################################################
 # reconstruct area emissions
 em_meas <- em * NA
